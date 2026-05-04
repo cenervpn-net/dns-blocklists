@@ -1,0 +1,2 @@
+# Manual additions for the 'gambling' tier.
+# One domain per line. Lines starting with '#' are comments.

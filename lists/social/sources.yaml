@@ -1,0 +1,6 @@
+sources:
+  - name: stevenblack-anti-social
+    url: https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social/hosts
+    format: hosts
+    license: MIT
+    description: StevenBlack anti-social extension (Facebook, TikTok, etc.).

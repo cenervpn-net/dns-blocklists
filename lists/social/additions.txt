@@ -1,0 +1,2 @@
+# Manual additions for the 'social' tier.
+# One domain per line. Lines starting with '#' are comments.

@@ -1,0 +1,6 @@
+sources:
+  - name: stevenblack-gambling
+    url: https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling/hosts
+    format: hosts
+    license: MIT
+    description: StevenBlack gambling extension.

@@ -1,0 +1,6 @@
+# Tracker-specific source list. The advertising tier already covers
+# most ad-tracking infrastructure via AdGuard DNS Filter; this tier
+# is a placeholder for tracker-specific sources we may onboard later
+# (e.g. Disconnect Me's tracker list, EasyPrivacy converted to plain
+# domains, etc.).
+sources: []

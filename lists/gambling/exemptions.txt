@@ -1,0 +1,2 @@
+# Manual exemptions for the 'gambling' tier.
+# One domain per line. Lines listed here are unconditionally REMOVED from the merged output.

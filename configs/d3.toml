@@ -1,0 +1,18 @@
+# d3 ("Maximum") tier composition.
+#
+# Customers who choose d3 get the most aggressive blocking — d2 plus
+# malware, social media, gambling, and the privacy feed.
+
+name = "d3"
+description = "Maximum filtering. Includes everything d2 blocks plus social, gambling, malware."
+
+include = [
+    "advertising",
+    "tracker",
+    "malware",
+    "social",
+    "gambling",
+    "privacy",
+]
+
+output_filename = "d3.conf"

@@ -1,0 +1,47 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pyyaml
+      - name: Validate config tree
+        run: python3 scripts/validate.py
+
+  render-smoke:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pyyaml
+      - name: Render (smoke; full network fetch)
+        run: python3 scripts/render.py --quiet --tag "ci-${GITHUB_SHA::7}"
+      - name: Sanity-check output
+        run: |
+          set -euo pipefail
+          test -s dist/manifest.json
+          for f in dist/*.conf; do
+            test -s "$f"
+            head -1 "$f" | grep -q '^# Unbound blocklist'
+            # At least 1 000 domains in any rendered tier — guards against
+            # an upstream source returning a tiny error page that the
+            # renderer accepts as 0 valid lines.
+            count=$(grep -c '^    local-zone:' "$f")
+            if [ "$count" -lt 1000 ]; then
+              echo "FAIL: $f only has $count lines; suspicious"
+              exit 1
+            fi
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

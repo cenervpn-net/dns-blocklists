@@ -1,0 +1,19 @@
+# d2 ("Ad-Block") tier composition.
+#
+# Customers who choose d2 in their VPN config get this resolver. It
+# blocks advertising and trackers but leaves social media, gambling,
+# and adult content reachable.
+
+name = "d2"
+description = "Ad and tracker blocking. Social media and gambling reachable."
+
+# Lists to merge, in the order they're applied. Order matters only
+# insofar as the renderer processes additions/exemptions per list
+# before the global de-dup; see scripts/render.py for details.
+include = [
+    "advertising",
+    "tracker",
+]
+
+# Output filename in the release artefact.
+output_filename = "d2.conf"
