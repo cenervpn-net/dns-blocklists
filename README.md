@@ -74,6 +74,16 @@ patches). Push the tag. CI takes 2-3 minutes to render + checksum +
 publish. The fleet picks up the new tag within 20 minutes (5-min
 backend poll + 15-min gateway timer).
 
+Recommended (guarded) workflow:
+
+```bash
+./scripts/release_blocklists.sh --tag v1.0.2 --push
+```
+
+The script enforces clean git state, validates tag format, runs
+`validate.py` + tagged `render.py`, blocks duplicate tags, then pushes
+the release tag.
+
 For emergency rollback: delete the broken release in GitHub and the
 backend will fall back to the previous "latest" on its next poll.
 

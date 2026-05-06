@@ -1,6 +1,17 @@
-# Tracker-specific source list. The advertising tier already covers
-# most ad-tracking infrastructure via AdGuard DNS Filter; this tier
-# is a placeholder for tracker-specific sources we may onboard later
-# (e.g. Disconnect Me's tracker list, EasyPrivacy converted to plain
-# domains, etc.).
-sources: []
+# Tracker-focused sources used by DNS2 and DNS3.
+#
+# DNS2 promise: "ads + trackers with low breakage bias".
+# Keep this file focused on telemetry/tracking behaviour, not broad
+# malware or social-category blocking. Aggressive feeds belong in DNS3.
+sources:
+  - name: firebog-easyprivacy
+    url: https://v.firebog.net/hosts/Easyprivacy.txt
+    format: hosts
+    license: "EasyList terms"
+    description: EasyPrivacy feed mirrored by Firebog, tracker-focused baseline.
+
+  - name: hagezi-tracker-tiktok-aggressive
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.tiktok.extended.txt
+    format: domains
+    license: "Hagezi list license"
+    description: TikTok tracker/telemetry domains (aggressive but focused scope).

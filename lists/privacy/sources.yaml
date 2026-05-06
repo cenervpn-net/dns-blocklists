@@ -1,4 +1,52 @@
-sources: []
-# Placeholder. Populate this list with privacy-focused source feeds
-# (ISP telemetry, OS telemetry, smart-TV phone-home, etc.) when
-# we onboard them.
+# Privacy/telemetry-focused sources (DNS3-only).
+#
+# These are intentionally separated from tracker baseline so DNS2 stays
+# lower-breakage, while DNS3 gets stronger privacy posture.
+sources:
+  - name: hagezi-tracker-amazon
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.amazon.txt
+    format: domains
+    license: "Hagezi list license"
+    description: Amazon telemetry/native tracking domains.
+
+  - name: hagezi-tracker-apple
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.apple.txt
+    format: domains
+    license: "Hagezi list license"
+    description: Apple telemetry/native tracking domains.
+
+  - name: hagezi-tracker-huawei
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.huawei.txt
+    format: domains
+    license: "Hagezi list license"
+    description: Huawei telemetry/native tracking domains.
+
+  - name: hagezi-tracker-windows
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.winoffice.txt
+    format: domains
+    license: "Hagezi list license"
+    description: Windows/Office telemetry domains.
+
+  - name: hagezi-tracker-webos
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.lgwebos.txt
+    format: domains
+    license: "Hagezi list license"
+    description: LG webOS telemetry domains.
+
+  - name: hagezi-tracker-vivo
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.vivo.txt
+    format: domains
+    license: "Hagezi list license"
+    description: Vivo telemetry domains.
+
+  - name: hagezi-tracker-oppo-realme
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.oppo-realme.txt
+    format: domains
+    license: "Hagezi list license"
+    description: Oppo/Realme telemetry domains.
+
+  - name: hagezi-tracker-xiaomi
+    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/domains/native.xiaomi.txt
+    format: domains
+    license: "Hagezi list license"
+    description: Xiaomi telemetry domains.
